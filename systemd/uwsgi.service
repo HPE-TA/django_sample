@@ -1,0 +1,9 @@
+[Unit]
+Description=uWSGI service
+
+[Service]
+EnvironmentFile=/var/www/django_sample/systemd/env
+ExecStart=/bin/bash -c 'uwsgi --ini /var/www/django_sample/systemd/uwsgi.ini'
+
+[Install]
+WantedBy=multi-user.target
