@@ -52,9 +52,9 @@ WantedBy=multi-user.target
 EOF
 
 # Register uwsgi.service to systemd
-cd /etc/systemd/system
-ln -s $BASE_DIR/systemd/uwsgi.service uwsgi.service
+cd /usr/lib/systemd/system
+cp $BASE_DIR/systemd/uwsgi.service uwsgi.service
+systemctl enable uwsgi.service
 
 # Start uwsgi.service
 systemctl start uwsgi.service
-systemctl enable uwsgi.service
