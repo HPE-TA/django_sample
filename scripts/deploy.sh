@@ -8,17 +8,7 @@ if [[ $(whoami) != "root" ]]; then
 fi
 
 # Install requirement packages
-yum install -y mariadb mariadb-devel git gcc
-
-if [[ -z $(which python3.6 2>/dev/null ) ]]; then
-    yum -y install https://centos7.iuscommunity.org/ius-release.rpm
-    yum -y install python36u python36u-devel python36u-pip
-fi
-
-if [[ -z $(which pip3.6 2>/dev/null ) ]]; then
-    yum -y install https://centos7.iuscommunity.org/ius-release.rpm
-    yum -y install python36u-pip
-fi
+yum install -y mariadb mariadb-devel git gcc python3 python3-devel python3-pip
 
 # Install python lib requirements
 cd $BASE_DIR
